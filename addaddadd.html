@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>citi trail</title>
+    </head>
+    <body>
+        <header>
+            <h1>Main Screen</h1>
+        </header>
+        <form id="name-form">
+            <p>
+                <label>Name</label>
+                <input type="text" name="fullName" id="fullName">
+            </p>
+            <p>
+                    <label>Nationality</label>
+                    <select name="nationality" required="required" id="nation">
+                        <option value="">請選擇</option>
+                        <option value="U.S.">U.S.</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Japan">Japan</option>
+                        <option value="France">France</option> 
+                        <option value="Germany">Germany</option>
+                        <option value="Korea">Korea</option>                       
+                        <option value="Spain">Spain</option>
+                    </select>
+            </p>
+            <p>
+                    <label>Date of Birth</label>
+                    <input type="date" name="bday" id="DOB">
+            </p>
+            <p>
+                <input type="submit" value="Submit" id="submit">
+            </p>
+        </form>
+        <p id="result"></p>
+        <script>
+            var form = document.getElementById('name-form');
+            form.onsubmit = function (e) {
+                e.preventDefault();
+                var result = document.getElementById('result');
+                result.innerHTML = 'Case Number' +"&nbsp;&nbsp;"+form.fullName.value+"&nbsp;&nbsp;"+form.nation.value+"&nbsp;&nbsp;"+form.DOB.value;
+                form.reset();
+            };
+        </script>
+    </body>
+</html>
