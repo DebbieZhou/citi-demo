@@ -35,9 +35,9 @@
         </form>
         <div class="result">
             <label>Case Number :</label>
-            <div id="outName"></div>
-            <div id="outNation"></div>
-            <div id="outDob"></div>
+            <div class="outName"></div>
+            <div class="outNation"></div>
+            <div class="outDob"></div>
             <!--<tr>
                 <td id="outName"></td><span>
                 <td id="outNation"></td><span>
@@ -48,11 +48,11 @@
             var form = document.getElementById('name-form');
             form.onsubmit = function (e) {
                 e.preventDefault();
-                var outName = document.getElementById('outName');
+                var outName = document.getElementsByClassName('outName');
                 outName.innerHTML = form.fullName.value;
-                var outNation = document.getElementById('outNation');
+                var outNation = document.getElementsByClassName('outNation');
                 outNation.innerHTML = form.nation.value;
-                var outDob = document.getElementById('outDob');
+                var outDob = document.getElementsByClassName('outDob');
                 outDob.innerHTML = form.DOB.value;
                 form.reset();
             };
