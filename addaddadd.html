@@ -13,8 +13,8 @@
                 <input type="text" name="fullName" id="fullName">
             </p>
             <p>
-                    <label>Nationality</label>
-                    <select name="nationality" required="required" id="nation">
+                    <label>Nationality</label>.
+                    <select name="nationality" id="nation">
                         <option value="">請選擇</option>
                         <option value="U.S.">U.S.</option>
                         <option value="Canada">Canada</option>
@@ -33,13 +33,27 @@
                 <input type="submit" value="Submit" id="submit">
             </p>
         </form>
-        <p id="result"></p>
+        <div class="result">
+            <label>Case Number :</label>
+            <div id="outName"></div>
+            <div id="outNation"></div>
+            <div id="outDob"></div>
+            <!--<tr>
+                <td id="outName"></td><span>
+                <td id="outNation"></td><span>
+                <td id="outDob"></td><span>
+            </tr>-->
+        </div>
         <script>
             var form = document.getElementById('name-form');
             form.onsubmit = function (e) {
                 e.preventDefault();
-                var result = document.getElementById('result');
-                result.innerHTML = 'Case Number' +"&nbsp;&nbsp;"+form.fullName.value+"&nbsp;&nbsp;"+form.nation.value+"&nbsp;&nbsp;"+form.DOB.value;
+                var outName = document.getElementById('outName');
+                outName.innerHTML = form.fullName.value;
+                var outNation = document.getElementById('outNation');
+                outNation.innerHTML = form.nation.value;
+                var outDob = document.getElementById('outDob');
+                outDob.innerHTML = form.DOB.value;
                 form.reset();
             };
         </script>
