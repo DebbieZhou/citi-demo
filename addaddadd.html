@@ -33,11 +33,11 @@
                 <input type="submit" value="Submit" id="submit">
             </p>
         </form>
-        <div class="result">
+        <div class="result" style="display:inline-flex;">
             <label>Case Number :</label>
-            <div class="outName"></div>
-            <div class="outNation"></div>
-            <div class="outDob"></div>
+            <div id="outName"></div>
+            <div id="outNation"></div>
+            <div id="outDob"></div>
             <!--<tr>
                 <td id="outName"></td><span>
                 <td id="outNation"></td><span>
@@ -48,11 +48,11 @@
             var form = document.getElementById('name-form');
             form.onsubmit = function (e) {
                 e.preventDefault();
-                var outName = document.getElementsByClassName('outName');
+                var outName = document.getElementById('outName');
                 outName.innerHTML = form.fullName.value;
-                var outNation = document.getElementsByClassName('outNation');
+                var outNation = document.getElementById('outNation');
                 outNation.innerHTML = form.nation.value;
-                var outDob = document.getElementsByClassName('outDob');
+                var outDob = document.getElementById('outDob');
                 outDob.innerHTML = form.DOB.value;
                 form.reset();
             };
